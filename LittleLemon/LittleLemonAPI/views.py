@@ -6,3 +6,7 @@ from .serializers import MenuItemSerializer
 class MenuItemsView(generics.ListCreateAPIView):
     queryset = MenuItem.objects.all() # Retrieve all records
     serializer_class = MenuItemSerializer # To display and store the record
+    
+class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
+    queryset = MenuItem.objects.all()
+    serializer_class = MenuItemSerializer
